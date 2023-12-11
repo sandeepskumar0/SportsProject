@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>SPORTS - MACFAST | 2023</title>
+	<!--fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'>	
+	   <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+       <link rel="icon" type="image/png" href="
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAq1BMVEX////gwLS9dVavUR+uTxvCgGXly8Hy5eDMloGsSAiwVCWrRQCuTRfPnorevbC6akaqQgC7cE7atKa1YDf27OfUp5avUiH48fKzWy/79/h7AAC6i5Dy6uuBABKIGSqCABavdnzu4ePs2NDDg2iLJTOlYWjk0tXIjnafVl+JHS2bTFXawsWXQkyEAB2EABuSNkHQsbXJpanDmp6nZm3dxsmzfoTVsKrLn5rRopDWSq8+AAABrUlEQVR4AXTShYKCQBQF0Ks0MyIp3cg6stb2/3/ZDoKtR+kXxMONyVQQJRkvKKqmCbouEDpT8MiYm1QfUdOa3CeTPvlC0Ih6KWM7l+QLajo2Bq5HtcX99YVGPRcDHzACctuCBAbgh8P1KE4AeW6K+kg0LRlI4shHL0yzvCiBSjLp0LyugLLIs/QU0DRZumwB5c2klKgu0K7SrGlOAXnDsXzdAf7MC4HuPWcNNwZg0xyx7W4P7rDbsuFMjsGu6WUbxjabroyO2yEFgyXrr39075tspVSHPF+2XR/BVhjEGT/ahsD+E/M6ib/Gqtk3BvvNOdoiP9k5KTtg0G75QQFuGvw2TQjuwAO2LUabMWDi8PM/+jkgxGjFGrYGYHX5+sf8cwF8Z8Opy01ECWCvV4Y5cSkA/mCbA078LcsLH1BSOQihECAscpb7OIs3LXpLFYD6Bq5l40NeRkJX0MqqPRXhz20gDHHNtYhAvBDGbAKDimTu4lbo8Fmg2nT2V/fzJwY+7lm0HzVKhQWPdEI8qok+IhKesk3hOM+mhxeUQOPlFxVe+zNNFf/DC9iVGEgEAFigMeUoKWyiAAAAAElFTkSuQmCC">
+	<!--//fonts-->		
+		<link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- for-mobile-apps -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="soccer Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+		<script src="~/Content/js/jquery.min.js"></script>
+	
+</head>
+<body>
+
+<div class="header">
+	 <div class="container">
+		 <div class="logo">
+			   <h1><a href=@Url.Action("Index","Home")>MAC SPORTS</a></h1>
+		 </div>	
+		 <div class="top-menu">
+			 <span class="menu"></span>
+             <ul>
+
+                 <li class="nav-item active">@Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                 <li class="nav-item">@Html.ActionLink("ABOUT US", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                 @if (Session["IsLoggedIn"] == null )
+
+				 {
+                     <li class="nav-item">@Html.ActionLink("LOGIN", "login", "User_Tbl", new { area = "" }, new { @class = "nav-link" })</li>
+				 }
+                     @if (Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"])
+
+                     {
+                         <li class="nav-item">@Html.ActionLink("TO JOIN", "Create", "RequestJoin_Tbl", new { area = "" }, new { @class = "nav-link" })</li>
+                         <li class="nav-item">@Html.ActionLink("GALLERY ", "", "", new { area = "" }, new { @class = "nav-link" })</li>
+                         <li class="nav-item">@Html.ActionLink("NEWS & EVENTS", "", "", new { area = "" }, new { @class = "nav-link" })</li>
+                         <li class="nav-item">@Html.ActionLink("LOGOUT", "Logout", "User_Tbl", new { area = "" }, new { @class = "nav-link" })</li>
+                     }
+                 </ul>			 
+		 </div>			
+	
+		 <script>
+				$("span.menu").click(function(){
+					$(".top-menu ul").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+	  	
+
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+
+<div class="strip">
+	 <div class="container">
+	 <div class="search">
+		    <form>
+		    	<input type="text" value="" placeholder="Search...">
+				<input type="submit" value="">
+			</form>
+     </div>     
+	 <div class="social">			 
+			 <a href="#"><i class="facebook"></i></a>
+			 <a href="#"><i class="twitter"></i></a>
+			 <a href="#"><i class="dribble"></i></a>	
+			 <a href="#"><i class="google"></i></a>	
+			 <a href="#"><i class="youtube"></i></a>	
+	 </div>
+		<div class="clearfix"></div>
+		</div>
+</div>
+<!-- banner -->
+<div class="banner">
+		<script src="js/responsiveslides.min.js"></script>
+  <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 300,
+        manualControls: '#slider3-pager',
+      });
+    });
+  </script>
+	</div>
+
+ @RenderBody()
+<!--footer-->
+<div class="footer">
+	 <div class="container">
+		 <div class="copywrite">
+			 <p>© 2023 All Rights Reseverd Design by <a href="">MAC - TEAM</a> </p>
+		 </div>
+         <div class="footer-menu">
+             <ul>
+
+                 <li class="nav-item active">@Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                 <li class="nav-item">@Html.ActionLink("ABOUT US", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                 @if (Session["IsLoggedIn"] == null)
+
+                 {
+                     <li class="nav-item">@Html.ActionLink("LOGIN", "login", "User_Tbl", new { area = "" }, new { @class = "nav-link" })</li>
+                 }
+                 @if (Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"])
+
+                 {
+                     <li class="nav-item">@Html.ActionLink("TO JOIN", "Create", "RequestJoin_Tbl", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li class="nav-item">@Html.ActionLink("GALLERY ", "", "", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li class="nav-item">@Html.ActionLink("NEWS & EVENTS", "", "", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li class="nav-item">@Html.ActionLink("LOGOUT", "Logout", "User_Tbl", new { area = "" }, new { @class = "nav-link" })</li>
+                 }
+                 <li class="nav-item">@Html.ActionLink("ADMIN", "Login", "Admin_Tbl", new { area = "" }, new { @class = "nav-link" })</li>
+             </ul>
+         </div>
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+<!-- //footer -->
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿@model MyProject.Models.TeamList_Tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TeamList_Tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.member_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member_batch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member_batch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member_dept)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member_dept)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.other_info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.other_info)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category_Tbl.Cat_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category_Tbl.Cat_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.team_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

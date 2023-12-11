@@ -1,0 +1,57 @@
+﻿@model MyProject.Models.RequestJoin_Tbl
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayoutPage1.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RequestJoin_Tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_Dept)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_Dept)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Req_Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Req_Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category_Tbl.Cat_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category_Tbl.Cat_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

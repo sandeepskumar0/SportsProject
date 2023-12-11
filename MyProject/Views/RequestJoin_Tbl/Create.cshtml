@@ -1,0 +1,89 @@
+﻿@model MyProject.Models.RequestJoin_Tbl
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="about">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li class="active">To Join</li>
+        </ol>
+        <marquee>
+            Launching a sports club selection from November to December 2023—unleash your passion and join us for an exciting journey of athletic excellence and team camaraderie! 🏆⚽🏀 #SportsClubSelection2023
+        </marquee>
+        <h2>Important</h2>
+        <div class="about-head">
+            <p>
+                Attend tryouts or introductory sessions if required, and express your interest in becoming a member.
+                Stay connected with the club through their communication channels, attend regular meetings, and participate in club activities to fully engage with the sports community in your college.
+            </p>
+        </div>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="container">
+                <h2>Request Form</h2>
+                <hr />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">
+                        Full Name <i class="fas fa-user"></i>
+                    </label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Req_name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Req_name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">
+                        Department <i class="fas fa-building"></i>
+                    </label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Req_Dept, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Req_Dept, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">
+                        Age <i class="fas fa-birthday-cake"></i>
+                    </label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Req_Age, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Req_Age, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">
+                        Interested In  <i class="fas fa-list"></i>
+                    </label>
+                    <div class="col-md-10">
+                        @Html.DropDownList("Cat_Fid", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Cat_Fid, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-success">
+                            Submit <i class="fas fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@*@section Scripts {
+        <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+    }*@

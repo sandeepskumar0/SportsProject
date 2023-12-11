@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MyProject.Models.TeamList_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPage1.cshtml";
+}
+
+<h2>Team List | Sports</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.member_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.member_batch)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.member_dept)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.other_info)
+                </th>
+                <th>
+                   Sport
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.member_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.member_batch)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.member_dept)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.other_info)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category_Tbl.Cat_Name)
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.team_id }, new { @class = "btn btn-warning btn-sm" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.team_id }, new { @class = "btn btn-info btn-sm" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.team_id }, new { @class = "btn btn-danger btn-sm" })
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
